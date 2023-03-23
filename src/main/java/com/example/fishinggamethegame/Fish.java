@@ -1,6 +1,6 @@
 package com.example.fishinggamethegame;
 
-public class Fish {
+public class Fish implements Fishable {
     private final String type;
     private final Rarity rarity;
     private final int sellPrice;
@@ -9,5 +9,15 @@ public class Fish {
         this.type = type;
         this.rarity = rarity;
         this.sellPrice = sellPrice;
+    }
+
+    @Override
+    public boolean escape(){
+        return true;
+    }
+
+    @Override
+    public boolean catchThing() {
+        return true;
     }
 }
