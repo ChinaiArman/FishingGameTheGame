@@ -1,4 +1,4 @@
-package com.example.fishinggamethegame;
+package com.example.fishinggamethegame.classes;
 
 public class Item {
     private final String name;

@@ -1,4 +1,4 @@
-package com.example.fishinggamethegame;
+package com.example.fishinggamethegame.classes;
 
 public class Fish implements Fishable {
     private final String type;

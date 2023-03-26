@@ -1,4 +1,4 @@
-package com.example.fishinggamethegame;
+package com.example.fishinggamethegame.classes;
 
 public class Junk extends Item implements Fishable {
     private final int sellPrice;
