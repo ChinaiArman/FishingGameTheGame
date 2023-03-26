@@ -9,15 +9,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomeController {
+public class LakeController {
 
     @FXML
-    private Button btn1;
+    private Button btn2;
 
     @FXML
-    void goToTwo(MouseEvent event) throws IOException {
-        Stage stage = (Stage) btn1.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LakeController.fxml"));
+    void goToOne(MouseEvent event) throws IOException {
+        Stage stage = (Stage) btn2.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Fishing Game, The Game!");
         stage.setScene(scene);
