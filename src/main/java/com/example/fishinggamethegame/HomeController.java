@@ -22,7 +22,7 @@ public class HomeController {
         Stage stage = (Stage) playButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LakeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Fishing Game, The Game!");
+        stage.setTitle("Fishing Game, The Game! (Lake)");
         stage.setScene(scene);
     }
 

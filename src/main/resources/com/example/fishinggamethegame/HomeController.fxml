@@ -44,5 +44,20 @@
             <Font name="Comic Sans MS Bold" size="100.0" />
          </font>
       </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="72.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@swirl.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="978.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@swirl.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="1620.0" layoutY="740.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@swirl.gif" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

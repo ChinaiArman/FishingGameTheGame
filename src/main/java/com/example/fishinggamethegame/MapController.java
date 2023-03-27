@@ -1,6 +1,62 @@
 package com.example.fishinggamethegame;
 
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class MapController {
+
+    @FXML
+    private Button lakeButton;
+
+    @FXML
+    private Button oceanButton;
+
+    @FXML
+    private Button shopButton;
+
+    @FXML
+    private Button mainMenuButton;
+
+    @FXML
+    void visitLake(MouseEvent event) throws IOException {
+        Stage stage = (Stage) lakeButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LakeController.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Fishing Game, The Game! (Lake)");
+        stage.setScene(scene);
+    }
+
+    @FXML
+    void visitOcean(MouseEvent event) throws IOException {
+        Stage stage = (Stage) oceanButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("OceanController.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Fishing Game, The Game! (Ocean)");
+        stage.setScene(scene);
+    }
+
+    @FXML
+    void visitShop(MouseEvent event) throws IOException {
+        Stage stage = (Stage) shopButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("ShopController.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Fishing Game, The Game! (Shop)");
+        stage.setScene(scene);
+    }
+
+    @FXML
+    void visitMainMenu(MouseEvent event) throws IOException {
+        Stage stage = (Stage) mainMenuButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Fishing Game, The Game! (Main Menu)");
+        stage.setScene(scene);
+    }
 
 }
