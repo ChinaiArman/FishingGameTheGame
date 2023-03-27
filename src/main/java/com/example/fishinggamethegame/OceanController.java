@@ -1,6 +1,6 @@
 package com.example.fishinggamethegame;
 
 
-public class LakeController {
+public class OceanController {
 
 }
