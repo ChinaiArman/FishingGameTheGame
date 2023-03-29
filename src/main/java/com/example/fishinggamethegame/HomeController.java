@@ -1,21 +1,21 @@
 package com.example.fishinggamethegame;
 
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
-        import javafx.scene.Scene;
-        import javafx.scene.control.Button;
-        import javafx.scene.input.MouseEvent;
-        import javafx.stage.Stage;
+    import javafx.fxml.FXML;
+    import javafx.fxml.FXMLLoader;
+    import javafx.scene.Scene;
+    import javafx.scene.image.ImageView;
+    import javafx.scene.input.MouseEvent;
+    import javafx.stage.Stage;
 
-        import java.io.IOException;
+    import java.io.IOException;
 
 public class HomeController {
 
     @FXML
-    private Button exitButton;
+    private ImageView exitButton;
 
     @FXML
-    private Button playButton;
+    private ImageView playButton;
 
     @FXML
     void playGame(MouseEvent event) throws IOException {
@@ -28,7 +28,7 @@ public class HomeController {
 
     @FXML
     void quitGame(MouseEvent event) {
-        Stage stage = (Stage) playButton.getScene().getWindow();
+        Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
     }
 
