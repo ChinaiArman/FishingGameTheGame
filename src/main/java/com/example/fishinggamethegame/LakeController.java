@@ -1,21 +1,32 @@
 package com.example.fishinggamethegame;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
+        import javafx.fxml.FXML;
+        import javafx.fxml.FXMLLoader;
+        import javafx.scene.Scene;
+        import javafx.scene.image.ImageView;
+        import javafx.scene.input.MouseEvent;
+        import javafx.stage.Stage;
 
-import java.io.IOException;
+        import java.io.IOException;
 
 public class LakeController {
 
     @FXML
-    private Button mapButton;
+    private ImageView fishButton;
 
     @FXML
-    private Button mainMenuButton;
+    private ImageView mainMenuButton;
+
+    @FXML
+    private ImageView mapButton;
+
+    @FXML
+    private ImageView fishingRod;
+
+    @FXML
+    void castRod(MouseEvent event) {
+        fishingRod.setVisible(!fishingRod.isVisible());
+    }
 
     @FXML
     void openMap(MouseEvent event) throws IOException {
@@ -36,3 +47,4 @@ public class LakeController {
     }
 
 }
+
