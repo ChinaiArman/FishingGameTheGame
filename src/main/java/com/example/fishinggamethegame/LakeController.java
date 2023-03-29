@@ -5,11 +5,18 @@ package com.example.fishinggamethegame;
         import javafx.scene.Scene;
         import javafx.scene.image.ImageView;
         import javafx.scene.input.MouseEvent;
+        import javafx.scene.text.Text;
         import javafx.stage.Stage;
 
         import java.io.IOException;
 
 public class LakeController {
+
+    @FXML
+    private Text fishCount;
+
+    @FXML
+    private Text coinCount;
 
     @FXML
     private ImageView fishButton;
