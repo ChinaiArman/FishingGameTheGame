@@ -3,6 +3,7 @@ package com.example.fishinggamethegame;
 public class Player {
     private static int fishCount = 0;
     private static int coinCount = 0;
+    private static int currentScore = 0;
     public Player() {
     }
 
@@ -18,7 +19,17 @@ public class Player {
         return coinCount;
     }
 
+    public static int getCurrentScore() {
+        return currentScore;
+    }
+
+    public static void setCurrentScore(int currentScore) {
+        Player.currentScore = currentScore;
+    }
+
     public static void setCoinCount(int coinCount) {
         Player.coinCount = coinCount;
     }
+
+
 }

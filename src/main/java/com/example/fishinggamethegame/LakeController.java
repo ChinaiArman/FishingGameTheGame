@@ -7,6 +7,8 @@ package com.example.fishinggamethegame;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.Scene;
         import javafx.scene.image.ImageView;
+        import javafx.scene.input.KeyCode;
+        import javafx.scene.input.KeyEvent;
         import javafx.scene.input.MouseEvent;
         import javafx.scene.text.Text;
         import javafx.stage.Stage;
@@ -17,11 +19,29 @@ package com.example.fishinggamethegame;
 
 public class LakeController {
 
+    Random randInt = new Random();
+
+    int cycleCounter = randInt.nextInt(100, 150);
+
+    boolean isUp;
+
     @FXML
     private Text fishCount;
 
     @FXML
     private Text coinCount;
+
+    @FXML
+    private ImageView fishingMeter;
+
+    @FXML
+    private ImageView fishingTarget;
+
+    @FXML
+    private ImageView userFishingBar;
+
+    @FXML
+    private ImageView fishingSwirl;
 
     @FXML
     private ImageView fishButton;
@@ -44,13 +64,12 @@ public class LakeController {
     @FXML
     void castRod() {
         Random randInt = new Random();
-        fishingRod.setVisible(!fishingRod.isVisible());
-        if (fishingRod.isVisible()) {
-            fishButton.setVisible(false);
-            mainMenuButton.setVisible(!mainMenuButton.isVisible());
-            mapButton.setVisible(!mapButton.isVisible());
-            delay(randInt.nextInt(3, 10) * 1000L, () -> fishingGameManager());
-        }
+        fishingRod.setVisible(true);
+        fishingSwirl.setVisible(true);
+        fishButton.setVisible(false);
+        mainMenuButton.setVisible(false);
+        mapButton.setVisible(false);
+        delay(randInt.nextInt(3, 8) * 1000L, () -> fishingGameManager());
     }
 
     @FXML
@@ -89,7 +108,6 @@ public class LakeController {
     void fishingGameManager() {
         Random randInt = new Random();
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
-            // waiting animation
         }));
         timeline.setCycleCount(randInt.nextInt(10, 16));
         timeline.play();
@@ -100,8 +118,65 @@ public class LakeController {
 
     @FXML
     void fishingGame() {
-        // game mechanics
-        // change to fish caught scene
+        Player.setCurrentScore(0);
+        isUp = false;
+        fishingTarget.setVisible(true);
+        userFishingBar.setVisible(true);
+        fishingMeter.setVisible(true);
+
+
+        Timeline fishTimeline = new Timeline(new KeyFrame(Duration.seconds(0.035), e -> {
+            if (fishingTarget.getLayoutY() > 720) {
+                fishingTarget.setLayoutY(fishingTarget.getLayoutY() - randInt.nextInt(20));
+            } else if (fishingTarget.getLayoutY() < 250) {
+                fishingTarget.setLayoutY(fishingTarget.getLayoutY() + randInt.nextInt(20));
+            } else {
+                fishingTarget.setLayoutY(fishingTarget.getLayoutY() + randInt.nextInt(-20, 20));
+            }
+        }));
+        fishTimeline.setCycleCount(cycleCounter);
+        fishTimeline.play();
+
+        Timeline userTimeLine = new Timeline(new KeyFrame(Duration.seconds(0.035), e -> {
+            if (isUp && !(userFishingBar.getLayoutY() < 270)) {
+                userFishingBar.setLayoutY(userFishingBar.getLayoutY() - 8);
+            } else if (!isUp && !(userFishingBar.getLayoutY() > 600)) {
+                userFishingBar.setLayoutY(userFishingBar.getLayoutY() + 8);
+            }
+            if ((fishingTarget.getLayoutY() - 10) > userFishingBar.getLayoutY()
+                    && fishingTarget.getLayoutY() < (userFishingBar.getLayoutY() + 150)) {
+                Player.setCurrentScore(Player.getCurrentScore() + 1);
+            }
+            System.out.println(Player.getCurrentScore());
+        }));
+        userTimeLine.setCycleCount(cycleCounter);
+        userTimeLine.play();
+        userTimeLine.setOnFinished(e -> {
+            try {
+                goToFishCaught();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+    }
+
+    @FXML
+    void moveBarDown(KeyEvent event) {
+        isUp = false;
+    }
+
+    @FXML
+    void moveBarUp(KeyEvent event) {
+        isUp = true;
+    }
+
+    @FXML
+    void goToFishCaught() throws IOException {
+        Stage stage = (Stage) mapButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("FishCaughtController.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Fishing Game, The Game! (Fish Caught)");
+        stage.setScene(scene);
     }
 }
 
