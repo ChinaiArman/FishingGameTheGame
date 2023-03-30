@@ -35,6 +35,12 @@ public class LakeController {
     @FXML
     private ImageView fishingRod;
 
+    public void initialize() {
+        fishCount.setText(String.valueOf(Player.getFishCount()));
+        coinCount.setText(String.valueOf(Player.getCoinCount()));
+        Player.setCoinCount(Player.getCoinCount() + 10);
+    }
+
     @FXML
     void castRod() {
         Random randInt = new Random();
@@ -88,10 +94,6 @@ public class LakeController {
         timeline.setCycleCount(randInt.nextInt(10, 16));
         timeline.play();
         timeline.setOnFinished(e -> {
-            fishButton.setVisible(!fishButton.isVisible());
-            fishingRod.setVisible(!fishingRod.isVisible());
-            mainMenuButton.setVisible(!mainMenuButton.isVisible());
-            mapButton.setVisible(!mapButton.isVisible());
             fishingGame();
         });
     }
