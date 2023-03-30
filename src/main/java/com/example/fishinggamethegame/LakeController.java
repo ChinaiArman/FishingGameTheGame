@@ -58,7 +58,6 @@ public class LakeController {
     public void initialize() {
         fishCount.setText(String.valueOf(Player.getFishCount()));
         coinCount.setText(String.valueOf(Player.getCoinCount()));
-        Player.setCoinCount(Player.getCoinCount() + 10);
     }
 
     @FXML
@@ -152,6 +151,7 @@ public class LakeController {
         userTimeLine.setCycleCount(cycleCounter);
         userTimeLine.play();
         userTimeLine.setOnFinished(e -> {
+            Player.setFishCount(Player.getFishCount() + 1);
             try {
                 goToFishCaught();
             } catch (IOException ex) {
