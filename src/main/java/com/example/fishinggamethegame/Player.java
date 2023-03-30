@@ -1,8 +1,11 @@
 package com.example.fishinggamethegame;
+import java.util.ArrayList;
 
 public class Player {
     private static int fishCount = 0;
     private static int coinCount = 0;
+    private static ArrayList<String> items;
+
     public Player() {
     }
 
