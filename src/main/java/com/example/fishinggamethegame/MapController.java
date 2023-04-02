@@ -9,6 +9,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * A MapController.
+ * @author Arman Chinai & Colin Doig
+ * @version 06042023
+ */
 public class MapController {
 
     @FXML
@@ -23,6 +28,11 @@ public class MapController {
     @FXML
     private Button mainMenuButton;
 
+    /**
+     * Set the Scene to the LakeController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitLake(MouseEvent event) throws IOException {
         Stage stage = (Stage) lakeButton.getScene().getWindow();
@@ -32,6 +42,11 @@ public class MapController {
         stage.setScene(scene);
     }
 
+    /**
+     * Set the Scene to the Ocean Controller.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitOcean(MouseEvent event) throws IOException {
         Stage stage = (Stage) oceanButton.getScene().getWindow();
@@ -41,6 +56,11 @@ public class MapController {
         stage.setScene(scene);
     }
 
+    /**
+     * Set the Scene to the ShopController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitShop(MouseEvent event) throws IOException {
         Stage stage = (Stage) shopButton.getScene().getWindow();
@@ -50,6 +70,11 @@ public class MapController {
         stage.setScene(scene);
     }
 
+    /**
+     * Set the Scene to the HomeController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitMainMenu(MouseEvent event) throws IOException {
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
