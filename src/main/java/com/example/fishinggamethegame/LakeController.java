@@ -17,6 +17,11 @@ package com.example.fishinggamethegame;
         import java.io.IOException;
         import java.util.Random;
 
+/**
+ * A LakeController.
+ * @author Arman Chinai & Colin Doig
+ * @version 06042023
+ */
 public class LakeController {
 
     Random randInt = new Random();
@@ -55,11 +60,17 @@ public class LakeController {
     @FXML
     private ImageView fishingRod;
 
+    /**
+     * Initialize the LakeController to display correct fish count and coin count of the Player.
+     */
     public void initialize() {
         fishCount.setText(String.valueOf(Player.getFishCount()));
         coinCount.setText(String.valueOf(Player.getCoinCount()));
     }
 
+    /**
+     * Alter the Scene to be ready for the fishingGame.
+     */
     @FXML
     void castRod() {
         Random randInt = new Random();
@@ -71,6 +82,11 @@ public class LakeController {
         delay(randInt.nextInt(3, 8) * 1000L, () -> fishingGameManager());
     }
 
+    /**
+     * Set the Scene to the MapController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void openMap(MouseEvent event) throws IOException {
         Stage stage = (Stage) mapButton.getScene().getWindow();
@@ -80,6 +96,11 @@ public class LakeController {
         stage.setScene(scene);
     }
 
+    /**
+     * Set the Scene to the HomeController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitMainMenu(MouseEvent event) throws IOException {
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
@@ -89,6 +110,11 @@ public class LakeController {
         stage.setScene(scene);
     }
 
+    /**
+     * Delay the running of a Runnable method by the desired amount of milliseconds.
+     * @param millis a long representing the number of milliseconds by which to delay
+     * @param continuation a Runnable method to be continued after the delay
+     */
     public static void delay(long millis, Runnable continuation) {
         Task<Void> sleeper = new Task<>() {
             @Override
@@ -103,6 +129,9 @@ public class LakeController {
         new Thread(sleeper).start();
     }
 
+    /**
+     * Manage the fishingGame.
+     */
     @FXML
     void fishingGameManager() {
         Random randInt = new Random();
@@ -115,6 +144,9 @@ public class LakeController {
         });
     }
 
+    /**
+     * Run the fishingGame for the user.
+     */
     @FXML
     void fishingGame() {
         Player.setCurrentScore(0);
@@ -160,16 +192,28 @@ public class LakeController {
         });
     }
 
+    /**
+     * Move the catch bar down for the user during the fishingGame.
+     * @param event A key press KeyEvent
+     */
     @FXML
     void moveBarDown(KeyEvent event) {
         isUp = false;
     }
 
+    /**
+     * Move the catch bar up for the user during the fishingGame.
+     * @param event A key press KeyEvent
+     */
     @FXML
     void moveBarUp(KeyEvent event) {
         isUp = true;
     }
 
+    /**
+     * Set the Scene to the FishCaughtController.
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void goToFishCaught() throws IOException {
         Stage stage = (Stage) mapButton.getScene().getWindow();
