@@ -28,7 +28,7 @@ public class HomeController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void playGame(MouseEvent event) throws IOException {
+    void playGame(final MouseEvent event) throws IOException {
         Stage stage = (Stage) playButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LakeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -41,7 +41,7 @@ public class HomeController {
      * @param event A click MouseEvent
      */
     @FXML
-    void quitGame(MouseEvent event) {
+    void quitGame(final MouseEvent event) {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();
     }

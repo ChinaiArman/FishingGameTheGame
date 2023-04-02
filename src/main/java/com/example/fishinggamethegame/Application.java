@@ -19,8 +19,7 @@ public class Application extends javafx.application.Application {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @Override
-    public void start(Stage stage) throws IOException {
-        Player player = new Player();
+    public void start(final Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Fishing Game, The Game! (Main Menu)");

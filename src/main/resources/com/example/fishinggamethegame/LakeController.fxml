@@ -64,16 +64,21 @@
             <Image url="@fishing_meter.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="userFishingBar" fitHeight="144.0" fitWidth="61.0" layoutX="1209.0" layoutY="544.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="userFishingBar" fitHeight="144.0" fitWidth="61.0" layoutX="1209.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@userFishingBar.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="fishingTarget" fitHeight="29.0" fitWidth="60.0" layoutX="1215.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="fishingTarget" fitHeight="29.0" fitWidth="60.0" layoutX="1215.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@fish_icon.png" />
          </image>
       </ImageView>
       <Button layoutX="-201.0" layoutY="1041.0" mnemonicParsing="false" onKeyPressed="#moveBarUp" onKeyReleased="#moveBarDown" onMouseClicked="#moveBarUp" opacity="0.0" prefHeight="131.0" prefWidth="156.0" text="Button" />
+      <ImageView fx:id="exclamation" fitHeight="150.0" fitWidth="200.0" layoutX="934.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@exclamation.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

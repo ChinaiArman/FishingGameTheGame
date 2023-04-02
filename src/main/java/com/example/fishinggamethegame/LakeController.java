@@ -7,7 +7,6 @@ package com.example.fishinggamethegame;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.Scene;
         import javafx.scene.image.ImageView;
-        import javafx.scene.input.KeyCode;
         import javafx.scene.input.KeyEvent;
         import javafx.scene.input.MouseEvent;
         import javafx.scene.text.Text;
@@ -24,11 +23,11 @@ package com.example.fishinggamethegame;
  */
 public class LakeController {
 
-    Random randInt = new Random();
+    private final Random randInt = new Random();
 
-    int cycleCounter = randInt.nextInt(100, 150);
+    private final int cycleCounter = randInt.nextInt(100, 150);
 
-    boolean isUp;
+    private boolean isUp;
 
     @FXML
     private Text fishCount;
@@ -38,6 +37,9 @@ public class LakeController {
 
     @FXML
     private ImageView fishingMeter;
+
+    @FXML
+    private ImageView exclamation;
 
     @FXML
     private ImageView fishingTarget;
@@ -73,7 +75,6 @@ public class LakeController {
      */
     @FXML
     void castRod() {
-        Random randInt = new Random();
         fishingRod.setVisible(true);
         fishingSwirl.setVisible(true);
         fishButton.setVisible(false);
@@ -88,7 +89,7 @@ public class LakeController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void openMap(MouseEvent event) throws IOException {
+    void openMap(final MouseEvent event) throws IOException {
         Stage stage = (Stage) mapButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("MapController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -102,7 +103,7 @@ public class LakeController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void visitMainMenu(MouseEvent event) throws IOException {
+    void visitMainMenu(final MouseEvent event) throws IOException {
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -115,7 +116,7 @@ public class LakeController {
      * @param millis a long representing the number of milliseconds by which to delay
      * @param continuation a Runnable method to be continued after the delay
      */
-    public static void delay(long millis, Runnable continuation) {
+    public static void delay(final long millis, final Runnable continuation) {
         Task<Void> sleeper = new Task<>() {
             @Override
             protected Void call() {
@@ -134,12 +135,28 @@ public class LakeController {
      */
     @FXML
     void fishingGameManager() {
-        Random randInt = new Random();
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
         }));
         timeline.setCycleCount(randInt.nextInt(10, 16));
         timeline.play();
         timeline.setOnFinished(e -> {
+            fishingSwirl.setVisible(false);
+            exclamation.setVisible(true);
+            fishingTarget.setVisible(true);
+            userFishingBar.setVisible(true);
+            fishingMeter.setVisible(true);
+            fishCaught();
+        });
+    }
+
+    @FXML
+    void fishCaught() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), e -> {
+        }));
+        timeline.setCycleCount(1);
+        timeline.play();
+        timeline.setOnFinished(e -> {
+            exclamation.setVisible(false);
             fishingGame();
         });
     }
@@ -151,10 +168,6 @@ public class LakeController {
     void fishingGame() {
         Player.setCurrentScore(0);
         isUp = false;
-        fishingTarget.setVisible(true);
-        userFishingBar.setVisible(true);
-        fishingMeter.setVisible(true);
-
 
         Timeline fishTimeline = new Timeline(new KeyFrame(Duration.seconds(0.035), e -> {
             if (fishingTarget.getLayoutY() > 720) {
@@ -197,7 +210,7 @@ public class LakeController {
      * @param event A key press KeyEvent
      */
     @FXML
-    void moveBarDown(KeyEvent event) {
+    void moveBarDown(final KeyEvent event) {
         isUp = false;
     }
 
@@ -206,7 +219,7 @@ public class LakeController {
      * @param event A key press KeyEvent
      */
     @FXML
-    void moveBarUp(KeyEvent event) {
+    void moveBarUp(final KeyEvent event) {
         isUp = true;
     }
 
