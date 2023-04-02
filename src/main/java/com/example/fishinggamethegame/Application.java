@@ -6,7 +6,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * An Application.
+ * @author Arman Chinai & Colin Doig
+ * @version 06042023
+ */
 public class Application extends javafx.application.Application {
+
+    /**
+     * Starts and runs the Application.
+     * @param stage an object of the Stage class
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @Override
     public void start(Stage stage) throws IOException {
         Player player = new Player();
@@ -17,6 +28,10 @@ public class Application extends javafx.application.Application {
         stage.show();
     }
 
+    /**
+     * Drive the program.
+     * @param args No command line arguments need to be entered
+     */
     public static void main(String[] args) {
         launch();
     }
