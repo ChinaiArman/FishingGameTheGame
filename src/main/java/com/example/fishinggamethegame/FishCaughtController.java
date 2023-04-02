@@ -9,11 +9,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * A FishCaughtController.
+ * @author Arman Chinai & Colin Doig
+ * @version 06042023
+ */
 public class FishCaughtController {
 
     @FXML
     private Button placeholder;
 
+    /**
+     * Set the Scene to the LakeController.
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void fishAgain() throws IOException {
         Stage stage = (Stage) placeholder.getScene().getWindow();
