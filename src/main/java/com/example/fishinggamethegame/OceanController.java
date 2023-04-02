@@ -9,6 +9,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * An OceanController.
+ * @author Arman Chinai & Colin Doig
+ * @version 06042023
+ */
 public class OceanController {
 
     @FXML
@@ -17,6 +22,11 @@ public class OceanController {
     @FXML
     private Button mainMenuButton;
 
+    /**
+     * Set the Scene to the MapController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void openMap(MouseEvent event) throws IOException {
         Stage stage = (Stage) mapButton.getScene().getWindow();
@@ -26,6 +36,11 @@ public class OceanController {
         stage.setScene(scene);
     }
 
+    /**
+     * Set the Scene to the HomeController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitMainMenu(MouseEvent event) throws IOException {
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
