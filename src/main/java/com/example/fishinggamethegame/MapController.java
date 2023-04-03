@@ -27,7 +27,7 @@ public class MapController {
     private ImageView shopButton;
 
     @FXML
-    private ImageView mainMenuButton;
+    private ImageView closeButton;
 
     @FXML
     public void initialize() {
@@ -84,9 +84,9 @@ public class MapController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void visitMainMenu(MouseEvent event) throws IOException {
-        Stage stage = (Stage) mainMenuButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
+    void closeMap(MouseEvent event) throws IOException {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastStage()));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Fishing Game, The Game! (Main Menu)");
         stage.setScene(scene);

@@ -12,7 +12,7 @@
             <Image url="@map_stage.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="mainMenuButton" fitHeight="102.0" fitWidth="96.0" layoutX="1790.0" layoutY="37.0" onMouseClicked="#visitMainMenu" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="closeButton" fitHeight="102.0" fitWidth="96.0" layoutX="1790.0" layoutY="37.0" onMouseClicked="#closeMap" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@main_menu_btn.png" />
          </image>

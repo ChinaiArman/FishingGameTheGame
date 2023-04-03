@@ -10,6 +10,7 @@ public class Player {
     private static int coinCount = 0;
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
+    private static String lastStage = null;
     public Player() {
     }
 
@@ -63,5 +64,17 @@ public class Player {
 
     public static boolean getOceanUnlocked() {
         return oceanUnlocked;
+    }
+
+    public static void unlockOcean() {
+        Player.oceanUnlocked = true;
+    }
+
+    public static String getLastStage() {
+        return lastStage;
+    }
+
+    public static void setLastStage(String lastStage) {
+        Player.lastStage = lastStage;
     }
 }

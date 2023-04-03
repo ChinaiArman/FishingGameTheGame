@@ -19,6 +19,7 @@ public class ShopController {
 
     @FXML
     void openMap(MouseEvent event) throws IOException {
+        Player.setLastStage("ShopController.fxml");
         Stage stage = (Stage) mapButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("MapController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -28,6 +29,7 @@ public class ShopController {
 
     @FXML
     void visitMainMenu(MouseEvent event) throws IOException {
+        Player.setLastStage("ShopController.fxml");
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

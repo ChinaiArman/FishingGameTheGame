@@ -4,7 +4,9 @@ package com.example.fishinggamethegame;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,18 +19,41 @@ import java.io.IOException;
 public class FishCaughtController {
 
     @FXML
-    private Button placeholder;
+    private ImageView exit;
+
+    @FXML
+    private ImageView fishCaughtBackground;
+
+    @FXML
+    private Text fishCaughtText;
+
+    @FXML
+    private ImageView fishFailedBackground;
+
+    @FXML
+    private Text fishFailedText;
+
+    @FXML
+    public void initialize() {
+        if (Player.getCurrentScore() > 75) {
+            fishCaughtBackground.setVisible(true);
+            fishCaughtText.setVisible(true);
+        } else {
+            fishFailedBackground.setVisible(true);
+            fishFailedText.setVisible(true);
+        }
+    }
 
     /**
      * Set the Scene to the LakeController.
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void fishAgain() throws IOException {
-        Stage stage = (Stage) placeholder.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LakeController.fxml"));
+    void exitMenu() throws IOException {
+        Stage stage = (Stage) exit.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastStage()));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Fishing Game, The Game! (Lake)");
+        stage.setTitle("Fishing Game, The Game! (" + Player.getLastStage().replace("Controller.fxml", "") + ")");
         stage.setScene(scene);
     }
 }
