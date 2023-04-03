@@ -169,19 +169,19 @@ public class LakeController {
         Player.setCurrentScore(0);
         isUp = false;
 
-        Timeline fishTimeline = new Timeline(new KeyFrame(Duration.seconds(0.035), e -> {
+        Timeline fishTimeline = new Timeline(new KeyFrame(Duration.seconds(0.025), e -> {
             if (fishingTarget.getLayoutY() > 720) {
-                fishingTarget.setLayoutY(fishingTarget.getLayoutY() - randInt.nextInt(20));
+                fishingTarget.setLayoutY(fishingTarget.getLayoutY() - randInt.nextInt(15));
             } else if (fishingTarget.getLayoutY() < 250) {
-                fishingTarget.setLayoutY(fishingTarget.getLayoutY() + randInt.nextInt(20));
+                fishingTarget.setLayoutY(fishingTarget.getLayoutY() + randInt.nextInt(15));
             } else {
-                fishingTarget.setLayoutY(fishingTarget.getLayoutY() + randInt.nextInt(-20, 20));
+                fishingTarget.setLayoutY(fishingTarget.getLayoutY() + randInt.nextInt(-15, 15));
             }
         }));
         fishTimeline.setCycleCount(cycleCounter);
         fishTimeline.play();
 
-        Timeline userTimeLine = new Timeline(new KeyFrame(Duration.seconds(0.035), e -> {
+        Timeline userTimeLine = new Timeline(new KeyFrame(Duration.seconds(0.025), e -> {
             if (isUp && !(userFishingBar.getLayoutY() < 270)) {
                 userFishingBar.setLayoutY(userFishingBar.getLayoutY() - 8);
             } else if (!isUp && !(userFishingBar.getLayoutY() > 600)) {
