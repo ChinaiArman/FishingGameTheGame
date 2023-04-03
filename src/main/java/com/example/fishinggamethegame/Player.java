@@ -11,6 +11,7 @@ public class Player {
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
     private static String lastStage = null;
+    private static int catchThreshold = 80;
     public Player() {
     }
 
@@ -26,7 +27,7 @@ public class Player {
      * Set the fishCount of the Player.
      * @param fishCount a positive integer representing the new number of fish owned by the Player.
      */
-    public static void setFishCount(int fishCount) {
+    public static void setFishCount(final int fishCount) {
         Player.fishCount = fishCount;
     }
 
@@ -50,7 +51,7 @@ public class Player {
      * Set the currentScore of the Player.
      * @param currentScore A positive integer representing the new score of the Player
      */
-    public static void setCurrentScore(int currentScore) {
+    public static void setCurrentScore(final int currentScore) {
         Player.currentScore = currentScore;
     }
 
@@ -58,7 +59,7 @@ public class Player {
      * Set the coinCount of the Player.
      * @param coinCount a positive integer representing the new number of coins the Player has
      */
-    public static void setCoinCount(int coinCount) {
+    public static void setCoinCount(final int coinCount) {
         Player.coinCount = coinCount;
     }
 
@@ -74,7 +75,15 @@ public class Player {
         return lastStage;
     }
 
-    public static void setLastStage(String lastStage) {
+    public static void setLastStage(final String lastStage) {
         Player.lastStage = lastStage;
+    }
+
+    public static int getCatchThreshold() {
+        return catchThreshold;
+    }
+
+    public static void decrementThreshold() {
+        Player.catchThreshold -= 5;
     }
 }

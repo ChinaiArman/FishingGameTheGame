@@ -35,7 +35,7 @@ public class FishCaughtController {
 
     @FXML
     public void initialize() {
-        if (Player.getCurrentScore() > 75) {
+        if (Player.getCurrentScore() > Player.getCatchThreshold()) {
             fishCaughtBackground.setVisible(true);
             fishCaughtText.setVisible(true);
         } else {
