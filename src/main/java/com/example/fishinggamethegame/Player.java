@@ -9,6 +9,7 @@ public class Player {
     private static int fishCount = 0;
     private static int coinCount = 0;
     private static int currentScore = 0;
+    private static boolean oceanUnlocked = false;
     public Player() {
     }
 
@@ -60,5 +61,7 @@ public class Player {
         Player.coinCount = coinCount;
     }
 
-
+    public static boolean getOceanUnlocked() {
+        return oceanUnlocked;
+    }
 }

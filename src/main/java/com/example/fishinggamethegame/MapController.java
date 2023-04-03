@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -17,16 +18,23 @@ import java.io.IOException;
 public class MapController {
 
     @FXML
-    private Button lakeButton;
+    private ImageView lakeButton;
 
     @FXML
-    private Button oceanButton;
+    private ImageView oceanButton;
 
     @FXML
-    private Button shopButton;
+    private ImageView shopButton;
 
     @FXML
-    private Button mainMenuButton;
+    private ImageView mainMenuButton;
+
+    @FXML
+    public void initialize() {
+        if (Player.getOceanUnlocked()) {
+            oceanButton.setVisible(true);
+        }
+    }
 
     /**
      * Set the Scene to the LakeController.
