@@ -11,7 +11,7 @@ public class Player {
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
     private static String lastStage = null;
-    private static int catchThreshold = 80;
+    private static int catchThreshold = 90;
     public Player() {
     }
 

@@ -25,7 +25,7 @@ public class LakeController {
 
     private final Random randInt = new Random();
 
-    private final int cycleCounter = randInt.nextInt(100, 150);
+    private final int cycleCounter = randInt.nextInt(150, 200);
 
     private boolean isUp;
 
@@ -198,7 +198,6 @@ public class LakeController {
         userTimeLine.setCycleCount(cycleCounter);
         userTimeLine.play();
         userTimeLine.setOnFinished(e -> {
-            Player.setFishCount(Player.getFishCount() + 1);
             try {
                 goToFishCaught();
             } catch (IOException ex) {

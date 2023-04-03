@@ -198,7 +198,6 @@ public class OceanController {
         userTimeLine.setCycleCount(cycleCounter);
         userTimeLine.play();
         userTimeLine.setOnFinished(e -> {
-            Player.setFishCount(Player.getFishCount() + 1);
             try {
                 goToFishCaught();
             } catch (IOException ex) {
