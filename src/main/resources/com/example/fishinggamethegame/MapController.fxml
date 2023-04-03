@@ -3,7 +3,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1010.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fishinggamethegame.MapController">
    <children>
@@ -12,29 +11,25 @@
             <Image url="@map_stage.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="closeButton" fitHeight="102.0" fitWidth="96.0" layoutX="1790.0" layoutY="37.0" onMouseClicked="#closeMap" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="closeButton" fitHeight="100.0" fitWidth="75.0" layoutX="1799.0" layoutY="38.0" onMouseClicked="#closeMap" onMouseEntered="#hoverExit" onMouseExited="#stopExitHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@main_menu_btn.png" />
          </image>
       </ImageView>
-      <HBox layoutX="548.0" layoutY="444.0" prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <ImageView fx:id="lakeButton" fitHeight="264.0" fitWidth="282.0" onMouseClicked="#visitLake" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@lake_btn.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="oceanButton" fitHeight="264.0" fitWidth="284.0" onMouseClicked="#visitOcean" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@ocean_btn.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="shopButton" fitHeight="219.0" fitWidth="326.0" onMouseClicked="#visitShop" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@shop_btn.png" />
-               </image>
-            </ImageView>
-         </children>
-      </HBox>
+      <ImageView fx:id="lakeButton" fitHeight="275.0" fitWidth="275.0" layoutX="500.0" layoutY="500.0" onMouseClicked="#visitLake" onMouseEntered="#hoverLake" onMouseExited="#stopLakeHover" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@lake_btn.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="shopButton" fitHeight="225.0" fitWidth="325.0" layoutX="1175.0" layoutY="500.0" onMouseClicked="#visitShop" onMouseEntered="#hoverShop" onMouseExited="#stopShopHover" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@shop_btn.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="oceanButton" fitHeight="275.0" fitWidth="275.0" layoutX="840.0" layoutY="500.0" onMouseClicked="#visitOcean" onMouseEntered="#hoverOcean" onMouseExited="#stopOceanHover" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@ocean_btn.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

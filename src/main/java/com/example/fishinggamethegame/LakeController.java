@@ -238,5 +238,35 @@ public class LakeController {
         stage.setTitle("Fishing Game, The Game! (Fish Caught)");
         stage.setScene(scene);
     }
+
+    @FXML
+    void hoverExit() {
+        mainMenuButton.setFitWidth(100);
+    }
+
+    @FXML
+    void stopExitHover() {
+        mainMenuButton.setFitWidth(75);
+    }
+
+    @FXML
+    void hoverMap() {
+        mapButton.setFitWidth(250);
+    }
+
+    @FXML
+    void stopMapHover() {
+        mapButton.setFitWidth(200);
+    }
+
+    @FXML
+    void hoverFish() {
+        fishButton.setFitHeight(250);
+    }
+
+    @FXML
+    void stopFishHover() {
+        fishButton.setFitHeight(200);
+    }
 }
 

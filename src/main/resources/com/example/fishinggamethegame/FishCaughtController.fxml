@@ -28,7 +28,7 @@
             <Font name="Comic Sans MS" size="96.0" />
          </font>
       </Text>
-      <ImageView fx:id="exit" fitHeight="294.0" fitWidth="294.0" layoutX="813.0" layoutY="750.0" onMouseClicked="#exitMenu" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="exit" fitHeight="275.0" fitWidth="275.0" layoutX="813.0" layoutY="750.0" onMouseClicked="#exitMenu" onMouseEntered="#hoverExit" onMouseExited="#stopExitHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@exit_btn.png" />
          </image>

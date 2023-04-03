@@ -92,4 +92,43 @@ public class MapController {
         stage.setScene(scene);
     }
 
+    @FXML
+    void hoverLake() {
+        lakeButton.setFitWidth(300);
+    }
+
+    @FXML
+    void stopLakeHover() {
+        lakeButton.setFitWidth(275);
+    }
+
+    @FXML
+    void hoverOcean() {
+        oceanButton.setFitWidth(300);
+    }
+
+    @FXML
+    void stopOceanHover() {
+        oceanButton.setFitWidth(275);
+    }
+
+    @FXML
+    void hoverShop() {
+        shopButton.setFitWidth(350);
+    }
+
+    @FXML
+    void stopShopHover() {
+        shopButton.setFitWidth(325);
+    }
+
+    @FXML
+    void hoverExit() {
+        closeButton.setFitWidth(100);
+    }
+
+    @FXML
+    void stopExitHover() {
+        closeButton.setFitWidth(75);
+    }
 }

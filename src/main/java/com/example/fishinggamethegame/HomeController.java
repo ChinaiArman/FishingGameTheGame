@@ -46,4 +46,23 @@ public class HomeController {
         stage.close();
     }
 
+    @FXML
+    void hoverPlay(final MouseEvent event) {
+        playButton.setFitHeight(250);
+    }
+
+    @FXML
+    void stopPlayHover(final MouseEvent event) {
+        playButton.setFitHeight(200);
+    }
+
+    @FXML
+    void hoverExit(final MouseEvent event) {
+        exitButton.setFitHeight(250);
+    }
+
+    @FXML
+    void stopExitHover(final MouseEvent event) {
+        exitButton.setFitHeight(200);
+    }
 }

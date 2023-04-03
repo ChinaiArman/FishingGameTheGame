@@ -26,12 +26,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <ImageView fx:id="playButton" fitHeight="206.0" fitWidth="334.0" onMouseClicked="#playGame" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="playButton" fitHeight="200.0" fitWidth="325.0" onMouseClicked="#playGame" onMouseEntered="#hoverPlay" onMouseExited="#stopPlayHover" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@play_btn.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="exitButton" fitHeight="206.0" fitWidth="336.0" onMouseClicked="#quitGame" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+            <ImageView fx:id="exitButton" fitHeight="200.0" fitWidth="325.0" onMouseClicked="#quitGame" onMouseEntered="#hoverExit" onMouseExited="#stopExitHover" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                <image>
                   <Image url="@exit_btn.png" />
                </image>

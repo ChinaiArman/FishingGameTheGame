@@ -56,4 +56,14 @@ public class FishCaughtController {
         stage.setTitle("Fishing Game, The Game! (" + Player.getLastStage().replace("Controller.fxml", "") + ")");
         stage.setScene(scene);
     }
+
+    @FXML
+    void hoverExit() {
+        exit.setFitWidth(300);
+    }
+
+    @FXML
+    void stopExitHover() {
+        exit.setFitWidth(275);
+    }
 }
