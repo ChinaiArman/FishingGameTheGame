@@ -1,21 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
+<?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1010.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fishinggamethegame.OceanController">
    <children>
-      <Button fx:id="mapButton" layoutX="856.0" layoutY="396.0" mnemonicParsing="false" onMouseClicked="#openMap" prefHeight="269.0" prefWidth="322.0" text="Map">
+      <ImageView fitHeight="1010.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ocean_stage.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fishingSwirl" fitHeight="218.0" fitWidth="206.0" layoutX="839.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@swirl.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fishingRod" fitHeight="543.0" fitWidth="268.0" layoutX="878.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@fishing_line.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mainMenuButton" fitHeight="88.0" fitWidth="78.0" layoutX="1799.0" layoutY="38.0" onMouseClicked="#visitMainMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@main_menu_btn.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fishButton" fitHeight="218.0" fitWidth="278.0" layoutX="1614.0" layoutY="780.0" onMouseClicked="#castRod" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fish_btn.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mapButton" fitHeight="150.0" fitWidth="200.0" layoutX="1561.0" layoutY="12.0" onMouseClicked="#openMap" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@map_btn.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="250.0" layoutX="30.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@fish_counter.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="fishCount" fill="#5b2614" layoutX="140.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.13671875">
          <font>
-            <Font size="47.0" />
+            <Font size="61.0" />
          </font>
-      </Button>
-      <Button fx:id="mainMenuButton" layoutX="1472.0" layoutY="369.0" mnemonicParsing="false" onMouseClicked="#visitMainMenu" prefHeight="175.0" prefWidth="284.0" text="Main Menu">
+      </Text>
+      <ImageView fitHeight="125.0" fitWidth="250.0" layoutX="30.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@coin_counter.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="coinCount" fill="#5b2614" layoutX="140.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.13671875">
          <font>
-            <Font size="39.0" />
+            <Font size="61.0" />
          </font>
-      </Button>
+      </Text>
+      <ImageView fx:id="fishingMeter" fitHeight="498.0" fitWidth="214.0" layoutX="1203.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@fishing_meter.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="userFishingBar" fitHeight="144.0" fitWidth="61.0" layoutX="1209.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@userFishingBar.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="fishingTarget" fitHeight="29.0" fitWidth="60.0" layoutX="1215.0" layoutY="500.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@fish_icon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="-201.0" layoutY="1041.0" mnemonicParsing="false" onKeyPressed="#moveBarUp" onKeyReleased="#moveBarDown" onMouseClicked="#moveBarUp" opacity="0.0" prefHeight="131.0" prefWidth="156.0" text="Button" />
+      <ImageView fx:id="exclamation" fitHeight="150.0" fitWidth="200.0" layoutX="934.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@exclamation.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
