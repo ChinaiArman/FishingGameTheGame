@@ -184,7 +184,7 @@ public class LakeController {
         fishTimeline.play();
 
         Timeline userTimeLine = new Timeline(new KeyFrame(Duration.seconds(0.025), e -> {
-            if (isUp && !(userFishingBar.getLayoutY() < 270)) {
+            if (isUp && !(userFishingBar.getLayoutY() < 258)) {
                 userFishingBar.setLayoutY(userFishingBar.getLayoutY() - 8);
             } else if (!isUp && !(userFishingBar.getLayoutY() > 600)) {
                 userFishingBar.setLayoutY(userFishingBar.getLayoutY() + 8);
