@@ -46,21 +46,33 @@ public class HomeController {
         stage.close();
     }
 
+    /**
+     * Change the size of the playButton on user hover.
+     */
     @FXML
     void hoverPlay(final MouseEvent event) {
         playButton.setFitHeight(250);
     }
 
+    /**
+     * Change the size of the playButton when the user stops hovering over it.
+     */
     @FXML
     void stopPlayHover(final MouseEvent event) {
         playButton.setFitHeight(200);
     }
 
+    /**
+     * Change the size of the exitButton on user hover.
+     */
     @FXML
     void hoverExit(final MouseEvent event) {
         exitButton.setFitHeight(250);
     }
 
+    /**
+     * Change the size of the exitButton when the user stops hovering over it.
+     */
     @FXML
     void stopExitHover(final MouseEvent event) {
         exitButton.setFitHeight(200);
