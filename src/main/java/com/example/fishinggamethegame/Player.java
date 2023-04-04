@@ -11,7 +11,8 @@ public class Player {
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
     private static String lastStage = null;
-    private static int catchThreshold = 115;
+    private static int catchThreshold = 120;
+    private static int maxBaitStrength = 150;
     public Player() {
     }
 
@@ -85,5 +86,15 @@ public class Player {
 
     public static void decrementThreshold() {
         Player.catchThreshold -= 5;
+    }
+
+    public static int getMaxBaitStrength() {
+        return maxBaitStrength;
+    }
+
+    public static void increaseBaitStrength() {
+        if (Player.maxBaitStrength >= 50) {
+            Player.maxBaitStrength -= 10;
+        }
     }
 }
