@@ -29,6 +29,9 @@ public class MapController {
     @FXML
     private ImageView closeButton;
 
+    /**
+     * Reveal the oceanButton to the Player once Player.getOceanUnlocked() returns true
+     */
     @FXML
     public void initialize() {
         if (Player.getOceanUnlocked()) {
@@ -92,41 +95,65 @@ public class MapController {
         stage.setScene(scene);
     }
 
+    /**
+     * Change the size of the lakeButton on user hover.
+     */
     @FXML
     void hoverLake() {
         lakeButton.setFitWidth(300);
     }
 
+    /**
+     * Change the size of the lakeButton when the user stops hovering over it.
+     */
     @FXML
     void stopLakeHover() {
         lakeButton.setFitWidth(275);
     }
 
+    /**
+     * Change the size of the oceanButton on user hover.
+     */
     @FXML
     void hoverOcean() {
         oceanButton.setFitWidth(300);
     }
 
+    /**
+     * Change the size of the oceanButton when the user stops hovering over it.
+     */
     @FXML
     void stopOceanHover() {
         oceanButton.setFitWidth(275);
     }
 
+    /**
+     * Change the size of the shopButton on user hover.
+     */
     @FXML
     void hoverShop() {
         shopButton.setFitWidth(350);
     }
 
+    /**
+     * Change the size of the shopButton when the user stops hovering over it.
+     */
     @FXML
     void stopShopHover() {
         shopButton.setFitWidth(325);
     }
 
+    /**
+     * Change the size of the closeButton on user hover.
+     */
     @FXML
     void hoverExit() {
         closeButton.setFitWidth(100);
     }
 
+    /**
+     * Change the size of the closeButton when the user stops hovering over it.
+     */
     @FXML
     void stopExitHover() {
         closeButton.setFitWidth(75);
