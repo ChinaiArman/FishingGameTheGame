@@ -151,6 +151,9 @@ public class LakeController {
         });
     }
 
+    /**
+     *Displays the fishCaught exclamation point for several milliseconds before beginning the fishingGame.
+     */
     @FXML
     void fishCaught() {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.75), e -> {
@@ -238,31 +241,49 @@ public class LakeController {
         stage.setScene(scene);
     }
 
+    /**
+     * Change the size of the mainMenuButton on user hover.
+     */
     @FXML
     void hoverExit() {
         mainMenuButton.setFitWidth(100);
     }
 
+    /**
+     * Change the size of the mainMenuButton when the user stops hovering over it.
+     */
     @FXML
     void stopExitHover() {
         mainMenuButton.setFitWidth(75);
     }
 
+    /**
+     * Change the size of the mapButton on user hover.
+     */
     @FXML
     void hoverMap() {
         mapButton.setFitWidth(250);
     }
 
+    /**
+     * Change the size of the mapButton when the user stops hovering over it.
+     */
     @FXML
     void stopMapHover() {
         mapButton.setFitWidth(200);
     }
 
+    /**
+     * Change the size of the fishButton on user hover.
+     */
     @FXML
     void hoverFish() {
         fishButton.setFitHeight(250);
     }
 
+    /**
+     * Change the size of the fishButton when the user stops hovering over it.
+     */
     @FXML
     void stopFishHover() {
         fishButton.setFitHeight(200);
