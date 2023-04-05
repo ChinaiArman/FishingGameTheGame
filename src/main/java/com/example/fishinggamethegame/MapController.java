@@ -3,7 +3,6 @@ package com.example.fishinggamethegame;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -89,7 +88,7 @@ public class MapController {
     @FXML
     void closeMap(MouseEvent event) throws IOException {
         Stage stage = (Stage) closeButton.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastStage()));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastScene()));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Fishing Game, The Game! (Main Menu)");
         stage.setScene(scene);

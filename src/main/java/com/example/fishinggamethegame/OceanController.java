@@ -90,7 +90,7 @@ public class OceanController {
      */
     @FXML
     void openMap(final MouseEvent event) throws IOException {
-        Player.setLastStage("OceanController.fxml");
+        Player.setLastScene("OceanController.fxml");
         Stage stage = (Stage) mapButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("MapController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -105,7 +105,7 @@ public class OceanController {
      */
     @FXML
     void visitMainMenu(final MouseEvent event) throws IOException {
-        Player.setLastStage("OceanController.fxml");
+        Player.setLastScene("OceanController.fxml");
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -233,7 +233,7 @@ public class OceanController {
      */
     @FXML
     void goToFishCaught() throws IOException {
-        Player.setLastStage("OceanController.fxml");
+        Player.setLastScene("OceanController.fxml");
         Stage stage = (Stage) mapButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("FishCaughtController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());

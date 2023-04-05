@@ -54,9 +54,9 @@ public class FishCaughtController {
     @FXML
     void exitMenu() throws IOException {
         Stage stage = (Stage) exit.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastStage()));
+        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastScene()));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Fishing Game, The Game! (" + Player.getLastStage().replace("Controller.fxml", "") + ")");
+        stage.setTitle("Fishing Game, The Game! (" + Player.getLastScene().replace("Controller.fxml", "") + ")");
         stage.setScene(scene);
     }
 
