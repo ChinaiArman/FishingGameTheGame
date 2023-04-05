@@ -10,7 +10,7 @@ public class Player {
     private static int coinCount = 0;
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
-    private static String lastStage = null;
+    private static String lastScene = null;
     private static int catchThreshold = 120;
     private static int maxBaitStrength = 150;
     public Player() {
@@ -64,34 +64,63 @@ public class Player {
         Player.coinCount = coinCount;
     }
 
+    /**
+     * Determine whether the Player has unlocked the Ocean.
+     * @return true if the Player has unlocked the Ocean, else false
+     */
     public static boolean getOceanUnlocked() {
         return oceanUnlocked;
     }
 
+    /**
+     * Set oceanUnlocked to true for the Player.
+     */
     public static void unlockOcean() {
         Player.oceanUnlocked = true;
     }
 
-    public static String getLastStage() {
-        return lastStage;
+    /**
+     * Get the previous Scene the Player was in.
+     * @return a String representing the previous Scene
+     */
+    public static String getLastScene() {
+        return lastScene;
     }
 
-    public static void setLastStage(final String lastStage) {
-        Player.lastStage = lastStage;
+    /**
+     * Set lastScene to the previous Scene the Player was in.
+     * @param lastScene a String representing the previous Scene
+     */
+    public static void setLastScene(final String lastScene) {
+        Player.lastScene = lastScene;
     }
 
+    /**
+     * Get the current catchThreshold of the Player.
+     * @return a positive integer representing the current difficulty of catching fish
+     */
     public static int getCatchThreshold() {
         return catchThreshold;
     }
 
+    /**
+     * Decrease the catchThreshold of the Player, making it easier to catch fish
+     */
     public static void decrementThreshold() {
         Player.catchThreshold -= 5;
     }
 
+    /**
+     * Get the current maxBaitStrength of the Player.
+     * @return a positive integer representing the current strength of the Player's fishing bait
+     */
     public static int getMaxBaitStrength() {
         return maxBaitStrength;
     }
 
+    /**
+     * Decrease the maxBaitStrength of the Player by 10 to a minimum of 40.
+     */
     public static void increaseBaitStrength() {
         if (Player.maxBaitStrength >= 50) {
             Player.maxBaitStrength -= 10;
