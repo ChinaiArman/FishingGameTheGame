@@ -32,6 +32,9 @@ public class FishCaughtController {
     @FXML
     private Text fishFailedText;
 
+    /**
+     * If the Player successfully caught a fish perform the success actions, else display the failure screen.
+     */
     @FXML
     public void initialize() {
         if (Player.getCurrentScore() > Player.getCatchThreshold()) {
@@ -57,11 +60,17 @@ public class FishCaughtController {
         stage.setScene(scene);
     }
 
+    /**
+     * Change the size of the exitButton on user hover.
+     */
     @FXML
     void hoverExit() {
         exit.setFitWidth(300);
     }
 
+    /**
+     * Change the size of the exitButton when the user stops hovering over it.
+     */
     @FXML
     void stopExitHover() {
         exit.setFitWidth(275);
