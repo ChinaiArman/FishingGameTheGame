@@ -57,11 +57,19 @@ public class ShopController {
     @FXML
     private Text baitStrengthSuccessText;
 
+    @FXML
+    private Text fishCount;
+
+    @FXML
+    private Text coinCount;
+
     /**
      * Perform the initialization of the Shop Scene based on several parameters.
      */
     @FXML
     public void initialize() {
+        fishCount.setText(String.valueOf(Player.getFishCount()));
+        coinCount.setText(String.valueOf(Player.getCoinCount()));
         upgradeRodBtn.setVisible(Player.getCatchThreshold() >= 50);
         upgradeRodText.setVisible(Player.getCatchThreshold() >= 50);
         upgradeRodText.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
@@ -115,6 +123,7 @@ public class ShopController {
             oceanUnlockedSuccessText.setVisible(true);
             oceanUnlockedSuccessText.setText("Ocean Unlocked");
             oceanUnlockedSuccessText.setFill(Paint.valueOf("#72c95e"));
+            coinCount.setText(String.valueOf(Player.getCoinCount()));
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
             }));
             timeline.setCycleCount(10);
@@ -164,6 +173,7 @@ public class ShopController {
             baitStrengthSuccessText.setVisible(true);
             baitStrengthSuccessText.setText("+1 Bait Strength");
             baitStrengthSuccessText.setFill(Paint.valueOf("#72c95e"));
+            coinCount.setText(String.valueOf(Player.getCoinCount()));
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
             }));
             timeline.setCycleCount(10);
@@ -213,6 +223,7 @@ public class ShopController {
             rodStrengthSuccessText.setVisible(true);
             rodStrengthSuccessText.setText("+1 Rod Strength");
             rodStrengthSuccessText.setFill(Paint.valueOf("#72c95e"));
+            coinCount.setText(String.valueOf(Player.getCoinCount()));
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
             }));
             timeline.setCycleCount(10);
@@ -255,8 +266,10 @@ public class ShopController {
         if (Player.getFishCount() == 0) {
             System.out.println("no fish");
         } else {
-            Player.setCoinCount(Player.getFishCount() * 10);
+            Player.setCoinCount(Player.getCoinCount() + (Player.getFishCount() * 10));
             Player.setFishCount(0);
+            coinCount.setText(String.valueOf(Player.getCoinCount()));
+            fishCount.setText(String.valueOf(Player.getFishCount()));
         }
     }
 
