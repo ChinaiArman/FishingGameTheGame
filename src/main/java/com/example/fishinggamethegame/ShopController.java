@@ -1,12 +1,16 @@
 package com.example.fishinggamethegame;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -35,6 +39,18 @@ public class ShopController {
 
     @FXML
     private Text upgradeBaitText;
+
+    @FXML
+    private Text successText;
+
+    @FXML
+    private Text oceanUnlockedSuccessText;
+
+    @FXML
+    private Text rodStrengthSuccessText;
+
+    @FXML
+    private Text baitStrengthSuccessText;
 
     @FXML
     public void initialize() {
@@ -73,6 +89,29 @@ public class ShopController {
         if (!(Player.isOceanUnlocked()) && Player.getCoinCount() >= 50) {
             Player.unlockOcean();
             Player.setCoinCount(Player.getCoinCount() - 50);
+            successText.setVisible(true);
+            oceanUnlockedSuccessText.setVisible(true);
+            oceanUnlockedSuccessText.setText("Ocean Unlocked");
+            oceanUnlockedSuccessText.setFill(Paint.valueOf("#72c95e"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                successText.setVisible(false);
+                oceanUnlockedSuccessText.setVisible(false);
+            });
+        } else {
+            oceanUnlockedSuccessText.setVisible(true);
+            oceanUnlockedSuccessText.setText("Purchase Failed");
+            oceanUnlockedSuccessText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                oceanUnlockedSuccessText.setVisible(false);
+            });
         }
     }
 
@@ -84,6 +123,29 @@ public class ShopController {
             Player.incrementBaitLevel();
             upgradeBaitText.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             System.out.println(Player.getBaitLevel());
+            successText.setVisible(true);
+            baitStrengthSuccessText.setVisible(true);
+            baitStrengthSuccessText.setText("+1 Bait Strength");
+            baitStrengthSuccessText.setFill(Paint.valueOf("#72c95e"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                successText.setVisible(false);
+                baitStrengthSuccessText.setVisible(false);
+            });
+        } else {
+            baitStrengthSuccessText.setVisible(true);
+            baitStrengthSuccessText.setText("Purchase Failed");
+            baitStrengthSuccessText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                baitStrengthSuccessText.setVisible(false);
+            });
         }
     }
 
@@ -95,7 +157,30 @@ public class ShopController {
             Player.incrementRodLevel();
             upgradeRodText.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             System.out.println(Player.getRodLevel());
-        }
+            successText.setVisible(true);
+            rodStrengthSuccessText.setVisible(true);
+            rodStrengthSuccessText.setText("+1 Rod Strength");
+            rodStrengthSuccessText.setFill(Paint.valueOf("#72c95e"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                successText.setVisible(false);
+                rodStrengthSuccessText.setVisible(false);
+            });
+        } else {
+            rodStrengthSuccessText.setVisible(true);
+            rodStrengthSuccessText.setText("Purchase Failed");
+            rodStrengthSuccessText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+            rodStrengthSuccessText.setVisible(false);
+        });
+    }
     }
 
     @FXML

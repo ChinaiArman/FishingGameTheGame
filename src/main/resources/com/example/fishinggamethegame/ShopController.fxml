@@ -55,5 +55,25 @@
             <Font name="Comic Sans MS" size="28.0" />
          </font>
       </Text>
+      <Text fx:id="successText" fill="#72c95e" layoutX="725.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Purchase Successful" visible="false">
+         <font>
+            <Font name="Comic Sans MS" size="48.0" />
+         </font>
+      </Text>
+      <Text fx:id="baitStrengthSuccessText" fill="#c75d5d" layoutX="815.0" layoutY="700.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+1 Bait Strength" visible="false">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="rodStrengthSuccessText" fill="#72c95e" layoutX="815.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="+1 Rod Strength" visible="false">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fx:id="oceanUnlockedSuccessText" fill="#72c95e" layoutX="825.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ocean Unlocked" visible="false">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
