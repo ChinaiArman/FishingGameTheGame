@@ -29,7 +29,7 @@ public class MapController {
     private ImageView closeButton;
 
     /**
-     * Reveal the oceanButton to the Player once Player.getOceanUnlocked() returns true
+     * Reveal the oceanButton to the Player once Player.getOceanUnlocked() returns true.
      */
     @FXML
     public void initialize() {
@@ -39,10 +39,10 @@ public class MapController {
     /**
      * Set the Scene to the LakeController.
      * @param event A click MouseEvent
-     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found.
      */
     @FXML
-    void visitLake(MouseEvent event) throws IOException {
+    void visitLake(final MouseEvent event) throws IOException {
         Stage stage = (Stage) lakeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("LakeController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -56,7 +56,7 @@ public class MapController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void visitOcean(MouseEvent event) throws IOException {
+    void visitOcean(final MouseEvent event) throws IOException {
         Stage stage = (Stage) oceanButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("OceanController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -70,7 +70,7 @@ public class MapController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void visitShop(MouseEvent event) throws IOException {
+    void visitShop(final MouseEvent event) throws IOException {
         Stage stage = (Stage) shopButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("ShopController.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -84,7 +84,7 @@ public class MapController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void closeMap(MouseEvent event) throws IOException {
+    void closeMap(final MouseEvent event) throws IOException {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource(Player.getLastScene()));
         Scene scene = new Scene(fxmlLoader.load());

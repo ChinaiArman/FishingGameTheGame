@@ -134,7 +134,7 @@ public class Player {
     }
 
     /**
-     * Decrease the catchThreshold of the Player, making it easier to catch fish
+     * Decrease the catchThreshold of the Player, making it easier to catch fish.
      */
     public static void decrementThreshold() {
         Player.catchThreshold -= 5;

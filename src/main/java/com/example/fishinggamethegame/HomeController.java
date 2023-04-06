@@ -48,6 +48,7 @@ public class HomeController {
 
     /**
      * Change the size of the playButton on user hover.
+     * @param event A click MouseEvent
      */
     @FXML
     void hoverPlay(final MouseEvent event) {
@@ -56,6 +57,7 @@ public class HomeController {
 
     /**
      * Change the size of the playButton when the user stops hovering over it.
+     * @param event A click MouseEvent
      */
     @FXML
     void stopPlayHover(final MouseEvent event) {
@@ -64,6 +66,7 @@ public class HomeController {
 
     /**
      * Change the size of the exitButton on user hover.
+     * @param event A click MouseEvent
      */
     @FXML
     void hoverExit(final MouseEvent event) {
@@ -72,6 +75,7 @@ public class HomeController {
 
     /**
      * Change the size of the exitButton when the user stops hovering over it.
+     * @param event A click MouseEvent
      */
     @FXML
     void stopExitHover(final MouseEvent event) {

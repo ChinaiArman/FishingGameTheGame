@@ -93,7 +93,7 @@ public class ShopController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void openMap(MouseEvent event) throws IOException {
+    void openMap(final MouseEvent event) throws IOException {
         Player.setLastScene("ShopController.fxml");
         Stage stage = (Stage) mapButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("MapController.fxml"));
@@ -108,7 +108,7 @@ public class ShopController {
      * @throws IOException if Files or Resources that are attempted to be called cannot be found
      */
     @FXML
-    void visitMainMenu(MouseEvent event) throws IOException {
+    void visitMainMenu(final MouseEvent event) throws IOException {
         Player.setLastScene("ShopController.fxml");
         Stage stage = (Stage) mainMenuButton.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("HomeController.fxml"));
@@ -122,7 +122,7 @@ public class ShopController {
      * @param event A click MouseEvent
      */
     @FXML
-    void unlockOcean(MouseEvent event) {
+    void unlockOcean(final MouseEvent event) {
         if (!(Player.isOceanUnlocked()) && Player.getCoinCount() >= 50) {
             Player.unlockOcean();
             Player.setCoinCount(Player.getCoinCount() - 50);
@@ -169,7 +169,7 @@ public class ShopController {
      * @param event A click MouseEvent
      */
     @FXML
-    void upgradeBait(MouseEvent event) {
+    void upgradeBait(final MouseEvent event) {
         if (Player.getMaxBaitStrength() >= 50 && Player.getCoinCount() > (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1)) {
             Player.increaseBaitStrength();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
@@ -218,7 +218,7 @@ public class ShopController {
      * @param event A click MouseEvent
      */
     @FXML
-    void upgradeRod(MouseEvent event) {
+    void upgradeRod(final MouseEvent event) {
         if (Player.getCatchThreshold() >= 50 && Player.getCoinCount() > (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1)) {
             Player.decrementThreshold();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
@@ -267,7 +267,7 @@ public class ShopController {
      * @param event A click MouseEvent
      */
     @FXML
-    void sellFish(MouseEvent event) {
+    void sellFish(final MouseEvent event) {
         if (Player.getFishCount() == 0) {
             fishSoldText.setVisible(true);
             fishSoldText.setText("No Fish");
