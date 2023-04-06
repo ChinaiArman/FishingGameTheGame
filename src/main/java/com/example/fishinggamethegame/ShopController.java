@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -63,6 +64,12 @@ public class ShopController {
     @FXML
     private Text coinCount;
 
+    @FXML
+    private Text fishSoldText;
+
+    @FXML
+    private ImageView sellBtn;
+
     /**
      * Perform the initialization of the Shop Scene based on several parameters.
      */
@@ -72,10 +79,10 @@ public class ShopController {
         coinCount.setText(String.valueOf(Player.getCoinCount()));
         upgradeRodBtn.setVisible(Player.getCatchThreshold() >= 50);
         upgradeRodText.setVisible(Player.getCatchThreshold() >= 50);
-        upgradeRodText.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
+        upgradeRodText.setText("Upgrade Rod   $" + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
         upgradeBaitBtn.setVisible(Player.getMaxBaitStrength() >= 50);
         upgradeBaitText.setVisible(Player.getMaxBaitStrength() >= 50);
-        upgradeBaitText.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
+        upgradeBaitText.setText("Upgrade Bait   $" + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
         unlockOceanBtn.setVisible(!(Player.isOceanUnlocked()));
         unlockOceanText.setVisible(!(Player.isOceanUnlocked()));
     }
@@ -167,7 +174,7 @@ public class ShopController {
             Player.increaseBaitStrength();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             Player.incrementBaitLevel();
-            upgradeBaitText.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
+            upgradeBaitText.setText("Upgrade Bait   $" + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             System.out.println(Player.getBaitLevel());
             successText.setVisible(true);
             baitStrengthSuccessText.setVisible(true);
@@ -217,7 +224,7 @@ public class ShopController {
             Player.decrementThreshold();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             Player.incrementRodLevel();
-            upgradeRodText.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
+            upgradeRodText.setText("Upgrade Rod   $" + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             System.out.println(Player.getRodLevel());
             successText.setVisible(true);
             rodStrengthSuccessText.setVisible(true);
@@ -264,12 +271,31 @@ public class ShopController {
     @FXML
     void sellFish(MouseEvent event) {
         if (Player.getFishCount() == 0) {
-            System.out.println("no fish");
+            fishSoldText.setVisible(true);
+            fishSoldText.setText("No Fish");
+            fishSoldText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                fishSoldText.setVisible(false);
+            });
         } else {
             Player.setCoinCount(Player.getCoinCount() + (Player.getFishCount() * 10));
             Player.setFishCount(0);
             coinCount.setText(String.valueOf(Player.getCoinCount()));
             fishCount.setText(String.valueOf(Player.getFishCount()));
+            fishSoldText.setVisible(true);
+            fishSoldText.setText("Fish Sold!");
+            fishSoldText.setFill(Paint.valueOf("#72c95e"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                fishSoldText.setVisible(false);
+            });
         }
     }
 
@@ -303,5 +329,63 @@ public class ShopController {
     @FXML
     void stopMapHover() {
         mapButton.setFitWidth(200);
+    }
+
+    @FXML
+    void hoverOceanUnlock() {
+        unlockOceanBtn.setFitWidth(350);
+        unlockOceanText.setFont(new Font("Comic Sans MS", 30));
+    }
+
+    /**
+     * Change the size of the mapButton when the user stops hovering over it.
+     */
+    @FXML
+    void stopOceanUnlockHover() {
+        unlockOceanBtn.setFitWidth(300);
+        unlockOceanText.setFont(new Font("Comic Sans MS", 28));
+    }
+
+    @FXML
+    void hoverRodUpgrade() {
+        upgradeRodBtn.setFitWidth(350);
+        upgradeRodText.setFont(new Font("Comic Sans MS", 30));
+    }
+
+    /**
+     * Change the size of the mapButton when the user stops hovering over it.
+     */
+    @FXML
+    void stopRodUpgradeHover() {
+        upgradeRodBtn.setFitWidth(300);
+        upgradeRodText.setFont(new Font("Comic Sans MS", 28));
+    }
+
+    @FXML
+    void hoverBaitUpgrade() {
+        upgradeBaitBtn.setFitWidth(350);
+        upgradeBaitText.setFont(new Font("Comic Sans MS", 30));
+    }
+
+    /**
+     * Change the size of the mapButton when the user stops hovering over it.
+     */
+    @FXML
+    void stopBaitUpgradeHover() {
+        upgradeBaitBtn.setFitWidth(300);
+        upgradeBaitText.setFont(new Font("Comic Sans MS", 28));
+    }
+
+    @FXML
+    void hoverSell() {
+        sellBtn.setFitHeight(130);
+    }
+
+    /**
+     * Change the size of the mapButton when the user stops hovering over it.
+     */
+    @FXML
+    void stopSellHover() {
+        sellBtn.setFitHeight(122);
     }
 }

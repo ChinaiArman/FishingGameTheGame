@@ -23,32 +23,32 @@
             <Image url="@main_menu_btn.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="unlockOceanBtn" fitHeight="200.0" fitWidth="300.0" layoutX="805.0" layoutY="110.0" onMouseClicked="#unlockOcean" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="unlockOceanBtn" fitHeight="200.0" fitWidth="300.0" layoutX="805.0" layoutY="110.0" onMouseClicked="#unlockOcean" onMouseEntered="#hoverOceanUnlock" onMouseExited="#stopOceanUnlockHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@empty_btn.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="upgradeRodBtn" fitHeight="200.0" fitWidth="300.0" layoutX="805.0" layoutY="405.0" onMouseClicked="#upgradeRod" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="upgradeRodBtn" fitHeight="200.0" fitWidth="300.0" layoutX="805.0" layoutY="405.0" onMouseClicked="#upgradeRod" onMouseEntered="#hoverRodUpgrade" onMouseExited="#stopRodUpgradeHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@empty_btn.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="upgradeBaitBtn" fitHeight="200.0" fitWidth="300.0" layoutX="805.0" layoutY="705.0" onMouseClicked="#upgradeBait" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="upgradeBaitBtn" fitHeight="200.0" fitWidth="300.0" layoutX="805.0" layoutY="705.0" onMouseClicked="#upgradeBait" onMouseEntered="#hoverBaitUpgrade" onMouseExited="#stopBaitUpgradeHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@empty_btn.png" />
          </image>
       </ImageView>
-      <Text fx:id="unlockOceanText" fill="WHITE" layoutX="841.0" layoutY="175.0" onMouseClicked="#unlockOcean" strokeType="OUTSIDE" strokeWidth="0.0" text="Unlock Ocean $50" textAlignment="CENTER" wrappingWidth="226.13671875">
+      <Text fx:id="unlockOceanText" fill="WHITE" layoutX="845.0" layoutY="175.0" onMouseClicked="#unlockOcean" onMouseEntered="#hoverOceanUnlock" onMouseExited="#stopOceanUnlockHover" strokeType="OUTSIDE" strokeWidth="0.0" text="Unlock Ocean $50" textAlignment="CENTER" wrappingWidth="226.13671875">
          <font>
             <Font name="Comic Sans MS" size="28.0" />
          </font>
       </Text>
-      <Text fx:id="upgradeRodText" fill="WHITE" layoutX="853.0" layoutY="470.0" onMouseClicked="#upgradeRod" strokeType="OUTSIDE" strokeWidth="0.0" text="Upgrade Rod $10" textAlignment="CENTER" wrappingWidth="202.13671875">
+      <Text fx:id="upgradeRodText" fill="WHITE" layoutX="857.0" layoutY="470.0" onMouseClicked="#upgradeRod" onMouseEntered="#hoverRodUpgrade" onMouseExited="#stopRodUpgradeHover" strokeType="OUTSIDE" strokeWidth="0.0" text="Upgrade Rod $10" textAlignment="CENTER" wrappingWidth="202.13671875">
          <font>
             <Font name="Comic Sans MS" size="28.0" />
          </font>
       </Text>
-      <Text fx:id="upgradeBaitText" fill="WHITE" layoutX="853.0" layoutY="770.0" onMouseClicked="#upgradeBait" strokeType="OUTSIDE" strokeWidth="0.0" text="Upgrade Bait $10" textAlignment="CENTER" wrappingWidth="202.13671875">
+      <Text fx:id="upgradeBaitText" fill="WHITE" layoutX="857.0" layoutY="770.0" onMouseClicked="#upgradeBait" onMouseEntered="#hoverBaitUpgrade" onMouseExited="#stopBaitUpgradeHover" strokeType="OUTSIDE" strokeWidth="0.0" text="Upgrade Bait $10" textAlignment="CENTER" wrappingWidth="202.13671875">
          <font>
             <Font name="Comic Sans MS" size="28.0" />
          </font>
@@ -93,10 +93,15 @@
             <Font size="61.0" />
          </font>
       </Text>
-      <ImageView fitHeight="122.0" fitWidth="160.0" layoutX="290.0" layoutY="200.0" onMouseClicked="#sellFish" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="sellBtn" fitHeight="122.0" fitWidth="200.0" layoutX="290.0" layoutY="200.0" onMouseClicked="#sellFish" onMouseEntered="#hoverSell" onMouseExited="#stopSellHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@sell_btn.png" />
          </image>
       </ImageView>
+      <Text fx:id="fishSoldText" fill="#7fe427" layoutX="295.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fish Sold!" visible="false">
+         <font>
+            <Font name="Comic Sans MS" size="32.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
