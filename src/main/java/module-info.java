@@ -6,4 +6,6 @@ module com.example.fishinggamethegame {
 
     opens com.example.fishinggamethegame to javafx.fxml;
     exports com.example.fishinggamethegame;
+    exports Test;
+    opens Test to javafx.fxml;
 }
