@@ -6,14 +6,30 @@ package com.example.fishinggamethegame;
  * @version 06042023
  */
 public class Player {
-    private static int fishCount = 0;
+    private static int fishCount = 15;
     private static int coinCount = 0;
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
     private static String lastScene = null;
     private static int catchThreshold = 120;
     private static int maxBaitStrength = 150;
-    public Player() {
+    private static int rodLevel = 0;
+    private static int baitLevel = 0;
+
+    public static int getRodLevel() {
+        return rodLevel;
+    }
+
+    public static void incrementRodLevel() {
+        Player.rodLevel += 1;
+    }
+
+    public static int getBaitLevel() {
+        return baitLevel;
+    }
+
+    public static void incrementBaitLevel() {
+        Player.baitLevel += 1;
     }
 
     /**
@@ -68,7 +84,7 @@ public class Player {
      * Determine whether the Player has unlocked the Ocean.
      * @return true if the Player has unlocked the Ocean, else false
      */
-    public static boolean getOceanUnlocked() {
+    public static boolean isOceanUnlocked() {
         return oceanUnlocked;
     }
 
@@ -119,11 +135,9 @@ public class Player {
     }
 
     /**
-     * Decrease the maxBaitStrength of the Player by 10 to a minimum of 40.
+     * Decrease the maxBaitStrength of the Player by 10.
      */
     public static void increaseBaitStrength() {
-        if (Player.maxBaitStrength >= 50) {
-            Player.maxBaitStrength -= 10;
-        }
+        Player.maxBaitStrength -= 10;
     }
 }

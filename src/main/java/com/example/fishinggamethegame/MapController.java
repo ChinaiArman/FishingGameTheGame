@@ -33,9 +33,7 @@ public class MapController {
      */
     @FXML
     public void initialize() {
-        if (Player.getOceanUnlocked()) {
-            oceanButton.setVisible(true);
-        }
+        oceanButton.setVisible(Player.isOceanUnlocked());
     }
 
     /**

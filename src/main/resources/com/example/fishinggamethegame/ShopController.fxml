@@ -4,18 +4,33 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1010.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fishinggamethegame.ShopController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1010.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fishinggamethegame.ShopController">
    <children>
-      <Button fx:id="mapButton" layoutX="692.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#openMap" prefHeight="257.0" prefWidth="464.0" text="Map">
+      <Button fx:id="mapButton" layoutX="882.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#openMap" prefHeight="257.0" prefWidth="464.0" text="Map">
          <font>
             <Font size="56.0" />
          </font>
       </Button>
-      <Button fx:id="mainMenuButton" layoutX="1472.0" layoutY="369.0" mnemonicParsing="false" onMouseClicked="#visitMainMenu" prefHeight="175.0" prefWidth="284.0" text="Main Menu">
+      <Button fx:id="mainMenuButton" layoutX="1474.0" layoutY="119.0" mnemonicParsing="false" onMouseClicked="#visitMainMenu" prefHeight="175.0" prefWidth="284.0" text="Main Menu">
          <font>
             <Font size="39.0" />
          </font>
       </Button>
+      <Button fx:id="unlockOceanBtn" layoutX="338.0" layoutY="620.0" mnemonicParsing="false" onMouseClicked="#unlockOcean" prefHeight="191.0" prefWidth="250.0" text="Unlock Ocean" visible="false">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Button fx:id="upgradeRodBtn" layoutX="674.0" layoutY="475.0" mnemonicParsing="false" onMouseClicked="#upgradeRod" prefHeight="275.0" prefWidth="296.0" text="Upgrade Rod" visible="false">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="upgradeBaitBtn" layoutX="945.0" layoutY="685.0" mnemonicParsing="false" onMouseClicked="#upgradeBait" prefHeight="227.0" prefWidth="412.0" text="Upgrade bait" visible="false">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="172.0" mnemonicParsing="false" onMouseClicked="#sellFish" prefHeight="145.0" prefWidth="227.0" text="sell fish" />
    </children>
 </AnchorPane>

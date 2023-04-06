@@ -44,7 +44,7 @@
             <Image url="@fish_counter.png" />
          </image>
       </ImageView>
-      <Text fx:id="fishCount" fill="#5b2614" layoutX="140.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.13671875">
+      <Text fx:id="fishCount" fill="#5b2614" layoutX="112.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="121.13672521710396">
          <font>
             <Font size="61.0" />
          </font>
@@ -54,7 +54,7 @@
             <Image url="@coin_counter.png" />
          </image>
       </ImageView>
-      <Text fx:id="coinCount" fill="#5b2614" layoutX="140.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.13671875">
+      <Text fx:id="coinCount" fill="#5b2614" layoutX="130.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="RIGHT" wrappingWidth="104.13671875">
          <font>
             <Font size="61.0" />
          </font>
