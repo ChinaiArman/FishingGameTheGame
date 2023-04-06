@@ -175,7 +175,6 @@ public class ShopController {
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             Player.incrementBaitLevel();
             upgradeBaitText.setText("Upgrade Bait   $" + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
-            System.out.println(Player.getBaitLevel());
             successText.setVisible(true);
             baitStrengthSuccessText.setVisible(true);
             baitStrengthSuccessText.setText("+1 Bait Strength");
@@ -225,7 +224,6 @@ public class ShopController {
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             Player.incrementRodLevel();
             upgradeRodText.setText("Upgrade Rod   $" + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
-            System.out.println(Player.getRodLevel());
             successText.setVisible(true);
             rodStrengthSuccessText.setVisible(true);
             rodStrengthSuccessText.setText("+1 Rod Strength");

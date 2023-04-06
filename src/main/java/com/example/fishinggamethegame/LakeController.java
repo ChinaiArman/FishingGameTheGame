@@ -196,7 +196,6 @@ public class LakeController {
                     && fishingTarget.getLayoutY() < (userFishingBar.getLayoutY() + 150)) {
                 Player.setCurrentScore(Player.getCurrentScore() + 1);
             }
-            System.out.println(Player.getCurrentScore());
         }));
         userTimeLine.setCycleCount(cycleCounter);
         userTimeLine.play();
