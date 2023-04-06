@@ -14,6 +14,11 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 
+/**
+ * A ShopController.
+ * @author Arman Chinai & Colin Doig
+ * @version 06042023
+ */
 public class ShopController {
 
     @FXML
@@ -52,6 +57,9 @@ public class ShopController {
     @FXML
     private Text baitStrengthSuccessText;
 
+    /**
+     * Perform the initialization of the Shop Scene based on several parameters.
+     */
     @FXML
     public void initialize() {
         upgradeRodBtn.setVisible(Player.getCatchThreshold() >= 50);
@@ -64,6 +72,11 @@ public class ShopController {
         unlockOceanText.setVisible(!(Player.isOceanUnlocked()));
     }
 
+    /**
+     * Set the Scene to the MapController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void openMap(MouseEvent event) throws IOException {
         Player.setLastScene("ShopController.fxml");
@@ -74,6 +87,11 @@ public class ShopController {
         stage.setScene(scene);
     }
 
+    /**
+     * Set the Scene to the HomeController.
+     * @param event A click MouseEvent
+     * @throws IOException if Files or Resources that are attempted to be called cannot be found
+     */
     @FXML
     void visitMainMenu(MouseEvent event) throws IOException {
         Player.setLastScene("ShopController.fxml");
@@ -84,6 +102,10 @@ public class ShopController {
         stage.setScene(scene);
     }
 
+    /**
+     * Unlock access to the Ocean Scene for the Player if they have enough coins.
+     * @param event A click MouseEvent
+     */
     @FXML
     void unlockOcean(MouseEvent event) {
         if (!(Player.isOceanUnlocked()) && Player.getCoinCount() >= 50) {
@@ -115,6 +137,10 @@ public class ShopController {
         }
     }
 
+    /**
+     * Upgrade the Player's baitLevel if they have enough coins for the purchase.
+     * @param event A click MouseEvent
+     */
     @FXML
     void upgradeBait(MouseEvent event) {
         if (Player.getMaxBaitStrength() >= 50 && Player.getCoinCount() > (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1)) {
@@ -149,6 +175,10 @@ public class ShopController {
         }
     }
 
+    /**
+     * Upgrade the Player's rodLevel if they have enough coins for the purchase.
+     * @param event A click MouseEvent
+     */
     @FXML
     void upgradeRod(MouseEvent event) {
         if (Player.getCatchThreshold() >= 50 && Player.getCoinCount() > (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1)) {
@@ -183,6 +213,10 @@ public class ShopController {
     }
     }
 
+    /**
+     * Exchange Player's fish for coins.
+     * @param event A click MouseEvent
+     */
     @FXML
     void sellFish(MouseEvent event) {
         if (Player.getFishCount() == 0) {
