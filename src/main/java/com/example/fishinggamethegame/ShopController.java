@@ -3,9 +3,9 @@ package com.example.fishinggamethegame;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,21 +19,33 @@ public class ShopController {
     private ImageView mainMenuButton;
 
     @FXML
-    private Button unlockOceanBtn;
+    private ImageView unlockOceanBtn;
 
     @FXML
-    private Button upgradeRodBtn;
+    private ImageView upgradeRodBtn;
 
     @FXML
-    private Button upgradeBaitBtn;
+    private ImageView upgradeBaitBtn;
+
+    @FXML
+    private Text unlockOceanText;
+
+    @FXML
+    private Text upgradeRodText;
+
+    @FXML
+    private Text upgradeBaitText;
 
     @FXML
     public void initialize() {
         upgradeRodBtn.setVisible(Player.getCatchThreshold() >= 50);
-        upgradeRodBtn.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
+        upgradeRodText.setVisible(Player.getCatchThreshold() >= 50);
+        upgradeRodText.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
         upgradeBaitBtn.setVisible(Player.getMaxBaitStrength() >= 50);
-        upgradeBaitBtn.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
+        upgradeBaitText.setVisible(Player.getMaxBaitStrength() >= 50);
+        upgradeBaitText.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
         unlockOceanBtn.setVisible(!(Player.isOceanUnlocked()));
+        unlockOceanText.setVisible(!(Player.isOceanUnlocked()));
     }
 
     @FXML
@@ -70,7 +82,8 @@ public class ShopController {
             Player.increaseBaitStrength();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             Player.incrementBaitLevel();
-            upgradeBaitBtn.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
+            upgradeBaitText.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
+            System.out.println(Player.getBaitLevel());
         }
     }
 
@@ -80,7 +93,8 @@ public class ShopController {
             Player.decrementThreshold();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             Player.incrementRodLevel();
-            upgradeRodBtn.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
+            upgradeRodText.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
+            System.out.println(Player.getRodLevel());
         }
     }
 

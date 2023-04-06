@@ -7,7 +7,7 @@ package com.example.fishinggamethegame;
  */
 public class Player {
     private static int fishCount = 0;
-    private static int coinCount = 25;
+    private static int coinCount = 50;
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
     private static String lastScene = null;
