@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -12,10 +13,10 @@ import java.io.IOException;
 public class ShopController {
 
     @FXML
-    private Button mapButton;
+    private ImageView mapButton;
 
     @FXML
-    private Button mainMenuButton;
+    private ImageView mainMenuButton;
 
     @FXML
     private Button unlockOceanBtn;
@@ -57,7 +58,6 @@ public class ShopController {
 
     @FXML
     void unlockOcean(MouseEvent event) {
-        System.out.println("button things");
         if (!(Player.isOceanUnlocked()) && Player.getCoinCount() >= 50) {
             Player.unlockOcean();
             Player.setCoinCount(Player.getCoinCount() - 50);
@@ -70,6 +70,7 @@ public class ShopController {
             Player.increaseBaitStrength();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             Player.incrementBaitLevel();
+            upgradeBaitBtn.setText("Upgrade Bait - " + (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
         }
     }
 
@@ -79,6 +80,7 @@ public class ShopController {
             Player.decrementThreshold();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             Player.incrementRodLevel();
+            upgradeRodBtn.setText("Upgrade Rod - " + (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
         }
     }
 
@@ -90,5 +92,37 @@ public class ShopController {
             Player.setCoinCount(Player.getFishCount() * 10);
             Player.setFishCount(0);
         }
+    }
+
+    /**
+     * Change the size of the mainMenuButton on user hover.
+     */
+    @FXML
+    void hoverExit() {
+        mainMenuButton.setFitWidth(100);
+    }
+
+    /**
+     * Change the size of the mainMenuButton when the user stops hovering over it.
+     */
+    @FXML
+    void stopExitHover() {
+        mainMenuButton.setFitWidth(75);
+    }
+
+    /**
+     * Change the size of the mapButton on user hover.
+     */
+    @FXML
+    void hoverMap() {
+        mapButton.setFitWidth(250);
+    }
+
+    /**
+     * Change the size of the mapButton when the user stops hovering over it.
+     */
+    @FXML
+    void stopMapHover() {
+        mapButton.setFitWidth(200);
     }
 }
