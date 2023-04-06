@@ -123,9 +123,20 @@ public class ShopController {
                 successText.setVisible(false);
                 oceanUnlockedSuccessText.setVisible(false);
             });
+        } else if (Player.isOceanUnlocked()) {
+            oceanUnlockedSuccessText.setVisible(true);
+            oceanUnlockedSuccessText.setText("Already Purchased");
+            oceanUnlockedSuccessText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                oceanUnlockedSuccessText.setVisible(false);
+            });
         } else {
             oceanUnlockedSuccessText.setVisible(true);
-            oceanUnlockedSuccessText.setText("Purchase Failed");
+            oceanUnlockedSuccessText.setText("Insufficient Funds");
             oceanUnlockedSuccessText.setFill(Paint.valueOf("#cd2c2c"));
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
             }));
@@ -161,9 +172,20 @@ public class ShopController {
                 successText.setVisible(false);
                 baitStrengthSuccessText.setVisible(false);
             });
+        } else if (Player.getMaxBaitStrength() < 50) {
+            baitStrengthSuccessText.setVisible(true);
+            baitStrengthSuccessText.setText("No Upgrades Available");
+            baitStrengthSuccessText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                baitStrengthSuccessText.setVisible(false);
+            });
         } else {
             baitStrengthSuccessText.setVisible(true);
-            baitStrengthSuccessText.setText("Purchase Failed");
+            baitStrengthSuccessText.setText("Insufficient Funds");
             baitStrengthSuccessText.setFill(Paint.valueOf("#cd2c2c"));
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
             }));
@@ -199,9 +221,20 @@ public class ShopController {
                 successText.setVisible(false);
                 rodStrengthSuccessText.setVisible(false);
             });
+        } else if (Player.getCatchThreshold() < 50) {
+            rodStrengthSuccessText.setVisible(true);
+            rodStrengthSuccessText.setText("No Upgrades Available");
+            rodStrengthSuccessText.setFill(Paint.valueOf("#cd2c2c"));
+            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
+            }));
+            timeline.setCycleCount(10);
+            timeline.play();
+            timeline.setOnFinished(e -> {
+                rodStrengthSuccessText.setVisible(false);
+            });
         } else {
             rodStrengthSuccessText.setVisible(true);
-            rodStrengthSuccessText.setText("Purchase Failed");
+            rodStrengthSuccessText.setText("Insufficient Funds");
             rodStrengthSuccessText.setFill(Paint.valueOf("#cd2c2c"));
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.25), e -> {
             }));
