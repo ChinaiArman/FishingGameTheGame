@@ -16,18 +16,32 @@ public class Player {
     private static int rodLevel = 0;
     private static int baitLevel = 0;
 
+    /**
+     * Get the current rodLevel of the Player.
+     * @return a positive integer representing the Player rodLevel
+     */
     public static int getRodLevel() {
         return rodLevel;
     }
 
+    /**
+     * Increment the rodLevel of the Player by 1.
+     */
     public static void incrementRodLevel() {
         Player.rodLevel += 1;
     }
 
+    /**
+     * Get the current baitLevel of the Player.
+     * @return a positive integer representing the baitLevel of the Player
+     */
     public static int getBaitLevel() {
         return baitLevel;
     }
 
+    /**
+     * Increment the baitLevel of the Player by 1.
+     */
     public static void incrementBaitLevel() {
         Player.baitLevel += 1;
     }
