@@ -329,6 +329,9 @@ public class ShopController {
         mapButton.setFitWidth(200);
     }
 
+    /**
+     * Change the font and size of the unlockOceanBtn on user hover.
+     */
     @FXML
     void hoverOceanUnlock() {
         unlockOceanBtn.setFitWidth(350);
@@ -336,7 +339,7 @@ public class ShopController {
     }
 
     /**
-     * Change the size of the mapButton when the user stops hovering over it.
+     * Change the size and font of the unlockOceanBtn when the user stops hovering over it.
      */
     @FXML
     void stopOceanUnlockHover() {
@@ -344,6 +347,9 @@ public class ShopController {
         unlockOceanText.setFont(new Font("Comic Sans MS", 28));
     }
 
+    /**
+     * Change the size and font of the upgradeRodBtn on user hover.
+     */
     @FXML
     void hoverRodUpgrade() {
         upgradeRodBtn.setFitWidth(350);
@@ -351,7 +357,7 @@ public class ShopController {
     }
 
     /**
-     * Change the size of the mapButton when the user stops hovering over it.
+     * Change the size and font of the upgradeRodBtn when the user stops hovering over it.
      */
     @FXML
     void stopRodUpgradeHover() {
@@ -359,6 +365,9 @@ public class ShopController {
         upgradeRodText.setFont(new Font("Comic Sans MS", 28));
     }
 
+    /**
+     * Change the size and font of the upgradeBaitBtn.
+     */
     @FXML
     void hoverBaitUpgrade() {
         upgradeBaitBtn.setFitWidth(350);
@@ -366,7 +375,7 @@ public class ShopController {
     }
 
     /**
-     * Change the size of the mapButton when the user stops hovering over it.
+     * Change the size and font of the upgradeBaitBtn when the user stops hovering over it.
      */
     @FXML
     void stopBaitUpgradeHover() {
@@ -374,13 +383,16 @@ public class ShopController {
         upgradeBaitText.setFont(new Font("Comic Sans MS", 28));
     }
 
+    /**
+     * Change the size of the sellBtn on user hover.
+     */
     @FXML
     void hoverSell() {
         sellBtn.setFitHeight(130);
     }
 
     /**
-     * Change the size of the mapButton when the user stops hovering over it.
+     * Change the size of the sellBtn when the user stops hovering over it.
      */
     @FXML
     void stopSellHover() {
