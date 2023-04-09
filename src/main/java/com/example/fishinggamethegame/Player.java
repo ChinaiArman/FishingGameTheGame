@@ -6,8 +6,8 @@ package com.example.fishinggamethegame;
  * @version 06042023
  */
 public class Player {
-    private static int fishCount = 0;
-    private static int coinCount = 0;
+    private static int fishCount = 999;
+    private static int coinCount = 999;
     private static int currentScore = 0;
     private static boolean oceanUnlocked = false;
     private static String lastScene = null;
