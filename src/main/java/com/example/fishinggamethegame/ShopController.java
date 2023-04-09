@@ -170,7 +170,7 @@ public class ShopController {
      */
     @FXML
     void upgradeBait(final MouseEvent event) {
-        if (Player.getMaxBaitStrength() >= 50 && Player.getCoinCount() > (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1)) {
+        if (Player.getMaxBaitStrength() >= 50 && Player.getCoinCount() >= (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1)) {
             Player.increaseBaitStrength();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getBaitLevel() * 0.1));
             Player.incrementBaitLevel();
@@ -219,7 +219,7 @@ public class ShopController {
      */
     @FXML
     void upgradeRod(final MouseEvent event) {
-        if (Player.getCatchThreshold() >= 50 && Player.getCoinCount() > (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1)) {
+        if (Player.getCatchThreshold() >= 50 && Player.getCoinCount() >= (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1)) {
             Player.decrementThreshold();
             Player.setCoinCount(Player.getCoinCount() - (int) Math.pow(10, 1 + Player.getRodLevel() * 0.1));
             Player.incrementRodLevel();

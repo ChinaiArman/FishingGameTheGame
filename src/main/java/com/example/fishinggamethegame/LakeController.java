@@ -25,7 +25,7 @@ public class LakeController {
 
     private final Random randInt = new Random();
 
-    private final int cycleCounter = randInt.nextInt(Player.getMaxBaitStrength(), Player.getMaxBaitStrength() + 50);
+    private final int cycleCounter = randInt.nextInt(100, 150);
 
     private boolean isUp;
 
